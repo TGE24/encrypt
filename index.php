@@ -1,14 +1,16 @@
 <?php
 
 function encrypt() { 
+
 	$index = range('a', 'z');
 
 
 if  (isset($_POST['string']) &&!empty($_POST['string'])) {
 
 	$string = $_POST['string'];
+	$lowercase = strtolower($string);
 
-	$string_split = str_split($string); // converts the string into an array
+	$string_split = str_split($lowercase); // converts the string into an array
 
 	end($string_split); 
        $key_index = key($string_split); // gets the key of the last item in the string
